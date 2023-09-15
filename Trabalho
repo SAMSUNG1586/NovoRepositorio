@@ -1,0 +1,17 @@
+//Criação do Objeto XMLHttpRequest
+var xhr = new XMLHttpRequest();
+
+//Configuração da Requisição
+xhr.open('GET', 'https://exemplo.com/api/dados', true);
+
+//Definindo Função de Callback
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        // Aqui você pode processar os dados da resposta
+        var resposta = JSON.parse(xhr.responseText);
+        console.log(resposta);
+    }
+};
+
+//Envio da Requisição
+xhr.send();
